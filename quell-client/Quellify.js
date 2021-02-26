@@ -29,6 +29,7 @@ async function Quellify(endPoint, query, map, fieldsMap) {
   prototype = 'unQuellable';
   // pass-through for queries and operations that QuellCache cannot handle
   if (prototype === 'unQuellable') {
+    console.log('prototype is unquellable')
     const fetchOptions = {
       method: 'POST',
       headers: {
@@ -124,7 +125,7 @@ async function Quellify(endPoint, query, map, fieldsMap) {
       mergedResponse = mergedResponse;
     }
 
-    console.log('mergedResponse ===> ', mergedResponse);
+    // console.log('mergedResponse ===> ', mergedResponse);
 
     const formattedMergedResponse = QuellStore.alias
       ? { data: mergedResponse }
