@@ -109,7 +109,7 @@ class QuellCache {
 
             const successfullyCached = await this.cache(
               fullResponse,
-              protoArgs
+              protoArgs 
             );
             console.log("if succesfullyCached ??", successfullyCached);
             if (!successfullyCached) return this.query(req, res, next, false);
@@ -400,16 +400,11 @@ class QuellCache {
         for (const item of collection) {
           let itemFromCache = await this.getFromRedis(item);
           itemFromCache = itemFromCache ? JSON.parse(itemFromCache) : {};
-<<<<<<< HEAD
-          const builtItem = await this.buildItem(proto[superField], itemFromCache);
-          console.log('built item ==> ', builtItem);
-=======
           const builtItem = await this.buildItem(
             proto[superField],
             itemFromCache
           );
           console.log("buidt item ==> ", builtItem);
->>>>>>> 5c20508cb79fa6b58678960d2a8dadf9ac525ee1
           currentCollection.push(builtItem);
         }
         response[superField] = currentCollection;
