@@ -5,7 +5,7 @@ const graphqlNodeModule =
   process.env.NODE_ENV === 'development'
     ? '../../quell-server/src/quell'
     : '@quell/server';
-const QuellCache = require(graphqlNodeModule);
+const QuellCache = require(graphqlNodeModule); 
 
 // Express instance
 const app = express();
